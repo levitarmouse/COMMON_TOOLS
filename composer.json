@@ -5,7 +5,7 @@
             "url": "https://github.com/levitarmouse/KISS-CORE"
         }
     ],
-    "name": "levitarmouse/kiss_orm",
+    "name": "levitarmouse/common_tools",
     "description": "Group of reusable classes. Uses PHPMAILER, development of Andy Prevost and Marcus Bointon. Thanks to both.",
     "license": "proprietary",
     "type": "library",
