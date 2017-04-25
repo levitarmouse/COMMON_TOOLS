@@ -2,8 +2,8 @@
 
 namespace levitarmouse\common_tools\validations;
 
-use sm\classes\DataValidationInput as DVI;
-use sm\classes\DataValidationOutput as DVO;
+use levitarmouse\common_tools\validations\DataValidationInput as DVI;
+use levitarmouse\common_tools\validations\DataValidationOutput as DVO;
 
 /**
  * Description of RequestValidation
