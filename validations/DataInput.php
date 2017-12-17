@@ -3,18 +3,17 @@
 namespace levitarmouse\common_tools\validations;
 
 class DataInput {
-    
+
     public $name;
     public $type;
     public $minSize;
     public $maxSize;
-    
+
     /**
-     * 
-     * @param type $name
-     * @param type $type
-     * @param type $minSize
-     * @param type $maxSize
+     * @param string $name
+     * @param string $type
+     * @param integer $minSize
+     * @param integer $maxSize
      */
     public function __construct($name = '', $type = '', $minSize = '', $maxSize = '') {
 

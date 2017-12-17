@@ -29,14 +29,14 @@ class DataValidation {
 
                 $expName    = $item->name;
                 $expType    = strtoupper($item->type);
-                $expMinSize = ($item->minSize != DVI::Undefined) ? $item->minSize : false;
-                $expMaxSize = ($item->maxSize != DVI::Undefined) ? $item->maxSize : false;
+                $expMinSize = ($item->minSize != DVI::T_UNDEFINED) ? $item->minSize : false;
+                $expMaxSize = ($item->maxSize != DVI::T_UNDEFINED) ? $item->maxSize : false;
 
                 $isset = isset($request->$expName);
 
                 $possError = new \stdClass();
                 $possError->attribName = $expName;
-                
+
                 if (!$isset) {
                     $possError->errorCode  = DVO::NotSetted;
                     $output->add($possError);
@@ -57,15 +57,15 @@ class DataValidation {
                     }
 
                     $currLenght = ($currType == 'STRING' || $numberAsString) ? strlen($currValue) : 0;
-                    
+
                     $currType = ($numberAsString) ? 'STRING' : $currType;
 
                     if ($currType != $expType) {
                         if (!$numberAsString) {
                             if (empty($currValue)) {
-                                $possError->errorCode = DVO::EmptyValue;                                
+                                $possError->errorCode = DVO::EmptyValue;
                             } else {
-                                $possError->errorCode = DVO::WrongType;                                
+                                $possError->errorCode = DVO::WrongType;
                             }
                             $output->add($possError);
                         }

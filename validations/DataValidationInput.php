@@ -7,17 +7,14 @@ namespace levitarmouse\common_tools\validations;
  *
  * @author gabriel
  */
-class DataValidationInput {
-    
-    CONST TypeNull    = 'NULL';
-    CONST TypeInteger = 'Integer';
-    CONST TypeFloat   = 'Double';
-    CONST TypeDouble  = 'Double';
-    CONST TypeString  = 'String';
-    CONST TypeArray   = 'Array';
-    CONST TypeObject  = 'Object';
-    CONST Undefined   = 'Undefined';
-    
-     use levitarmouse\core\LmIterator;
+class DataValidationInput  extends \levitarmouse\core\DataTypes{
+
+
+    use \levitarmouse\core\LmIterator;
+
+    public function addInput(DataInput $mixed) {
+
+        $this->add($mixed);
+    }
 
 }
