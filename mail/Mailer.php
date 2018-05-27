@@ -2,9 +2,13 @@
 
 namespace levitarmouse\common_tools\mail;
 
-include_once './PHPMailer/PHPMailer.php';
-include_once './PHPMailer/PHPMailerException.php';
-include_once './PHPMailer/SMTP.php';
+$req1 = __DIR__. '/PHPMailer/PHPMailer.php';
+$req2 = __DIR__. '/PHPMailer/PHPMailerException.php';
+$req3 = __DIR__. '/PHPMailer/SMTP.php';
+
+include_once $req1;
+include_once $req2;
+include_once $req3;
 
 class Mailer
 {
@@ -93,6 +97,7 @@ class Mailer
 
     protected function BESend() {
         $mail = new \PHPMailer\PHPMailer();
+        $mail->CharSet = 'UTF-8';
 
         $mail->IsHTML(true);
 
@@ -113,10 +118,14 @@ class Mailer
 
         $mail->Body = $this->_body;
 
-        if(!$mail->Send()){
+        $sendResult = $mail->Send();
+
+        return $sendResult;
+//
+//        if(!$sendResult){
 //            echo "No se pudo enviar el Mensaje.";
-        }else{
+//        }else{
 //            echo "Mensaje enviado";
-        }
+//        }
     }
 }
